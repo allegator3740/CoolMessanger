@@ -1,0 +1,457 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7C0DDA0020BEBB5B00CCA280 /* draggon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DD9FF20BEBB5B00CCA280 /* draggon.jpg */; };
+		7C0DDA0220BEBD1600CCA280 /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DDA0120BEBD1600CCA280 /* dragon.png */; };
+		7C0DDA0420BEC34100CCA280 /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DDA0320BEC34000CCA280 /* pen.png */; };
+		7C37454B20BC27A2005C59EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37454A20BC27A2005C59EE /* AppDelegate.swift */; };
+		7C37454D20BC27A2005C59EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37454C20BC27A2005C59EE /* ViewController.swift */; };
+		7C37455020BC27A2005C59EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C37454E20BC27A2005C59EE /* Main.storyboard */; };
+		7C37455220BC27A4005C59EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C37455120BC27A4005C59EE /* Assets.xcassets */; };
+		7C37455520BC27A4005C59EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C37455320BC27A4005C59EE /* LaunchScreen.storyboard */; };
+		7C37455E20BC646A005C59EE /* LogoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37455D20BC646A005C59EE /* LogoutController.swift */; };
+		7CC600AD20EF8AF70062F428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */; };
+		F63966AE4F7316FED7A75033 /* Pods_CoolMessanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60E56E98E367C197EE61144 /* Pods_CoolMessanger.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		09114D85BA09BE7CB33D7786 /* Pods-CoolMessanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolMessanger.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoolMessanger/Pods-CoolMessanger.release.xcconfig"; sourceTree = "<group>"; };
+		7C0DD9FF20BEBB5B00CCA280 /* draggon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = draggon.jpg; sourceTree = "<group>"; };
+		7C0DDA0120BEBD1600CCA280 /* dragon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dragon.png; sourceTree = "<group>"; };
+		7C0DDA0320BEC34000CCA280 /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
+		7C37454720BC27A2005C59EE /* CoolMessanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolMessanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C37454A20BC27A2005C59EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7C37454C20BC27A2005C59EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C37454F20BC27A2005C59EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7C37455120BC27A4005C59EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7C37455420BC27A4005C59EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7C37455620BC27A4005C59EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C37455D20BC646A005C59EE /* LogoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutController.swift; sourceTree = "<group>"; };
+		7CC600AB20EF80990062F428 /* CoolMessanger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoolMessanger.entitlements; sourceTree = "<group>"; };
+		7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A950BF55992F6C540BE71A62 /* Pods-CoolMessanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolMessanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolMessanger/Pods-CoolMessanger.debug.xcconfig"; sourceTree = "<group>"; };
+		F60E56E98E367C197EE61144 /* Pods_CoolMessanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolMessanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C37454420BC27A2005C59EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F63966AE4F7316FED7A75033 /* Pods_CoolMessanger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7A826BA775E68EEAAEBEBBDC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F60E56E98E367C197EE61144 /* Pods_CoolMessanger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7C0DD9FC20BEB9DD00CCA280 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				7C0DDA0120BEBD1600CCA280 /* dragon.png */,
+				7C0DDA0320BEC34000CCA280 /* pen.png */,
+				7C0DD9FF20BEBB5B00CCA280 /* draggon.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		7C37453E20BC27A1005C59EE = {
+			isa = PBXGroup;
+			children = (
+				7C37454920BC27A2005C59EE /* CoolMessanger */,
+				7C37454820BC27A2005C59EE /* Products */,
+				895DB98A972245A650EDD57C /* Pods */,
+				7A826BA775E68EEAAEBEBBDC /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7C37454820BC27A2005C59EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7C37454720BC27A2005C59EE /* CoolMessanger.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7C37454920BC27A2005C59EE /* CoolMessanger */ = {
+			isa = PBXGroup;
+			children = (
+				7CC600AB20EF80990062F428 /* CoolMessanger.entitlements */,
+				7C37454A20BC27A2005C59EE /* AppDelegate.swift */,
+				7C0DD9FC20BEB9DD00CCA280 /* Images */,
+				7C37455C20BC6437005C59EE /* Controller */,
+				7C37454C20BC27A2005C59EE /* ViewController.swift */,
+				7C37454E20BC27A2005C59EE /* Main.storyboard */,
+				7C37455120BC27A4005C59EE /* Assets.xcassets */,
+				7C37455320BC27A4005C59EE /* LaunchScreen.storyboard */,
+				7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */,
+				7C37455620BC27A4005C59EE /* Info.plist */,
+			);
+			path = CoolMessanger;
+			sourceTree = "<group>";
+		};
+		7C37455C20BC6437005C59EE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7C37455D20BC646A005C59EE /* LogoutController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		895DB98A972245A650EDD57C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A950BF55992F6C540BE71A62 /* Pods-CoolMessanger.debug.xcconfig */,
+				09114D85BA09BE7CB33D7786 /* Pods-CoolMessanger.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7C37454620BC27A2005C59EE /* CoolMessanger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C37455920BC27A4005C59EE /* Build configuration list for PBXNativeTarget "CoolMessanger" */;
+			buildPhases = (
+				1F0B63E3674F5B8D031EC0F6 /* [CP] Check Pods Manifest.lock */,
+				7C37454320BC27A2005C59EE /* Sources */,
+				7C37454420BC27A2005C59EE /* Frameworks */,
+				7C37454520BC27A2005C59EE /* Resources */,
+				46235B8C1285C0DAC5D4DB8E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoolMessanger;
+			productName = CoolMessanger;
+			productReference = 7C37454720BC27A2005C59EE /* CoolMessanger.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7C37453F20BC27A1005C59EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Oleg;
+				TargetAttributes = {
+					7C37454620BC27A2005C59EE = {
+						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 7C37454220BC27A1005C59EE /* Build configuration list for PBXProject "CoolMessanger" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7C37453E20BC27A1005C59EE;
+			productRefGroup = 7C37454820BC27A2005C59EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7C37454620BC27A2005C59EE /* CoolMessanger */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7C37454520BC27A2005C59EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C0DDA0020BEBB5B00CCA280 /* draggon.jpg in Resources */,
+				7C0DDA0220BEBD1600CCA280 /* dragon.png in Resources */,
+				7C37455520BC27A4005C59EE /* LaunchScreen.storyboard in Resources */,
+				7C0DDA0420BEC34100CCA280 /* pen.png in Resources */,
+				7C37455220BC27A4005C59EE /* Assets.xcassets in Resources */,
+				7C37455020BC27A2005C59EE /* Main.storyboard in Resources */,
+				7CC600AD20EF8AF70062F428 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F0B63E3674F5B8D031EC0F6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoolMessanger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46235B8C1285C0DAC5D4DB8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CoolMessanger/Pods-CoolMessanger-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoolMessanger/Pods-CoolMessanger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7C37454320BC27A2005C59EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C37455E20BC646A005C59EE /* LogoutController.swift in Sources */,
+				7C37454D20BC27A2005C59EE /* ViewController.swift in Sources */,
+				7C37454B20BC27A2005C59EE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7C37454E20BC27A2005C59EE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C37454F20BC27A2005C59EE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7C37455320BC27A4005C59EE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7C37455420BC27A4005C59EE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7C37455720BC27A4005C59EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7C37455820BC27A4005C59EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7C37455A20BC27A4005C59EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A950BF55992F6C540BE71A62 /* Pods-CoolMessanger.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoolMessanger/CoolMessanger.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A3TB4G445J;
+				INFOPLIST_FILE = CoolMessanger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SuperApp.CoolMessanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7C37455B20BC27A4005C59EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09114D85BA09BE7CB33D7786 /* Pods-CoolMessanger.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CoolMessanger/CoolMessanger.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A3TB4G445J;
+				INFOPLIST_FILE = CoolMessanger/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SuperApp.CoolMessanger;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7C37454220BC27A1005C59EE /* Build configuration list for PBXProject "CoolMessanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C37455720BC27A4005C59EE /* Debug */,
+				7C37455820BC27A4005C59EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C37455920BC27A4005C59EE /* Build configuration list for PBXNativeTarget "CoolMessanger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C37455A20BC27A4005C59EE /* Debug */,
+				7C37455B20BC27A4005C59EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7C37453F20BC27A1005C59EE /* Project object */;
+}
