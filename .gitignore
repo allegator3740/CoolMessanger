@@ -1,0 +1,5 @@
+#THE LOCK FILE
+Pods/
+
+### macOS
+*.DS_Store
