@@ -15,18 +15,28 @@ import FirebaseAuth
 class ViewController: UITableViewController {
     var handle : AuthStateDidChangeListenerHandle?
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
-//        ref.removeValue()
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(handleLogout))
-//        Optional.some(5)
-
+        //        Optional.some(5)
+        if Auth.auth().currentUser?.uid == nil{
+            perform(#selector(handleLogout), with: self, afterDelay: 0)
+        }
+        
     }
-
+    
+    //clicking button OUT
     @objc func handleLogout()  {
+        
+        //user is not logged in
+        do {
+            try Auth.auth().signOut()
+        } catch let logoutError {
+            print(logoutError)
+        }
+        
         let loginController = LogoutController()
         present(loginController, animated: true, completion: nil)
     }
@@ -39,12 +49,11 @@ class ViewController: UITableViewController {
                 print("user is signed in")
                 print(user!.email!)
             } else {
-                print("no")
+                print("unautherized")
             }
         }
-     
+        
     }
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
