@@ -12,7 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 
-class ViewController: UITableViewController {
+class MessageController: UITableViewController {
     var handle : AuthStateDidChangeListenerHandle?
     
     
@@ -20,11 +20,30 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(handleLogout))
-        //        Optional.some(5)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleNewMessageController))
+        
+        checkIfUserIsLoggedIn()
+    }
+    
+    @objc func handleNewMessageController() {
+        let newMessage = NewMessageController()
+        let navController = UINavigationController(rootViewController: newMessage)
+        present(navController, animated: true, completion: nil)
+    }
+    
+    func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil{
             perform(#selector(handleLogout), with: self, afterDelay: 0)
+        } else {
+            let uid = Auth.auth().currentUser?.uid
+            Database.database().reference().child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+                if let dictionary = snapshot.value as? [String : AnyObject] {
+                    self.navigationItem.title = dictionary["name"] as? String
+                    print(dictionary)
+                }
+                print(snapshot)
+            }, withCancel: nil)
         }
-        
     }
     
     //clicking button OUT
@@ -37,7 +56,7 @@ class ViewController: UITableViewController {
             print(logoutError)
         }
         
-        let loginController = LogoutController()
+        let loginController = LoginController()
         present(loginController, animated: true, completion: nil)
     }
     

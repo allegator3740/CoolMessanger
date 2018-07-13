@@ -11,12 +11,17 @@
 		7C0DDA0220BEBD1600CCA280 /* dragon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DDA0120BEBD1600CCA280 /* dragon.png */; };
 		7C0DDA0420BEC34100CCA280 /* pen.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C0DDA0320BEC34000CCA280 /* pen.png */; };
 		7C37454B20BC27A2005C59EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37454A20BC27A2005C59EE /* AppDelegate.swift */; };
-		7C37454D20BC27A2005C59EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37454C20BC27A2005C59EE /* ViewController.swift */; };
+		7C37454D20BC27A2005C59EE /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37454C20BC27A2005C59EE /* MessageController.swift */; };
 		7C37455020BC27A2005C59EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C37454E20BC27A2005C59EE /* Main.storyboard */; };
 		7C37455220BC27A4005C59EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C37455120BC27A4005C59EE /* Assets.xcassets */; };
 		7C37455520BC27A4005C59EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C37455320BC27A4005C59EE /* LaunchScreen.storyboard */; };
-		7C37455E20BC646A005C59EE /* LogoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37455D20BC646A005C59EE /* LogoutController.swift */; };
+		7C37455E20BC646A005C59EE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37455D20BC646A005C59EE /* LoginController.swift */; };
+		7C3BA90720F7BD2C00810C23 /* LoginController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3BA90620F7BD2C00810C23 /* LoginController+Handlers.swift */; };
 		7CC600AD20EF8AF70062F428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */; };
+		7CFC973A20F66DBD004A19CC /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC973920F66DBD004A19CC /* NewMessageController.swift */; };
+		7CFC973C20F67A06004A19CC /* newMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC973B20F67A06004A19CC /* newMessage.png */; };
+		7CFC973E20F67BC5004A19CC /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC973D20F67BC5004A19CC /* 111.png */; };
+		7CFC974120F6A4DE004A19CC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC974020F6A4DE004A19CC /* User.swift */; };
 		F63966AE4F7316FED7A75033 /* Pods_CoolMessanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F60E56E98E367C197EE61144 /* Pods_CoolMessanger.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,14 +32,19 @@
 		7C0DDA0320BEC34000CCA280 /* pen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pen.png; sourceTree = "<group>"; };
 		7C37454720BC27A2005C59EE /* CoolMessanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolMessanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C37454A20BC27A2005C59EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C37454C20BC27A2005C59EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7C37454C20BC27A2005C59EE /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
 		7C37454F20BC27A2005C59EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C37455120BC27A4005C59EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C37455420BC27A4005C59EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C37455620BC27A4005C59EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C37455D20BC646A005C59EE /* LogoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutController.swift; sourceTree = "<group>"; };
+		7C37455D20BC646A005C59EE /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7C3BA90620F7BD2C00810C23 /* LoginController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+Handlers.swift"; sourceTree = "<group>"; };
 		7CC600AB20EF80990062F428 /* CoolMessanger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoolMessanger.entitlements; sourceTree = "<group>"; };
 		7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7CFC973920F66DBD004A19CC /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
+		7CFC973B20F67A06004A19CC /* newMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newMessage.png; sourceTree = "<group>"; };
+		7CFC973D20F67BC5004A19CC /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
+		7CFC974020F6A4DE004A19CC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A950BF55992F6C540BE71A62 /* Pods-CoolMessanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoolMessanger.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoolMessanger/Pods-CoolMessanger.debug.xcconfig"; sourceTree = "<group>"; };
 		F60E56E98E367C197EE61144 /* Pods_CoolMessanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoolMessanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -63,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				7C0DDA0120BEBD1600CCA280 /* dragon.png */,
+				7CFC973D20F67BC5004A19CC /* 111.png */,
+				7CFC973B20F67A06004A19CC /* newMessage.png */,
 				7C0DDA0320BEC34000CCA280 /* pen.png */,
 				7C0DD9FF20BEBB5B00CCA280 /* draggon.jpg */,
 			);
@@ -92,9 +104,9 @@
 			children = (
 				7CC600AB20EF80990062F428 /* CoolMessanger.entitlements */,
 				7C37454A20BC27A2005C59EE /* AppDelegate.swift */,
+				7CFC973F20F6A4C2004A19CC /* Model */,
 				7C0DD9FC20BEB9DD00CCA280 /* Images */,
 				7C37455C20BC6437005C59EE /* Controller */,
-				7C37454C20BC27A2005C59EE /* ViewController.swift */,
 				7C37454E20BC27A2005C59EE /* Main.storyboard */,
 				7C37455120BC27A4005C59EE /* Assets.xcassets */,
 				7C37455320BC27A4005C59EE /* LaunchScreen.storyboard */,
@@ -107,9 +119,20 @@
 		7C37455C20BC6437005C59EE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				7C37455D20BC646A005C59EE /* LogoutController.swift */,
+				7C37455D20BC646A005C59EE /* LoginController.swift */,
+				7C3BA90620F7BD2C00810C23 /* LoginController+Handlers.swift */,
+				7CFC973920F66DBD004A19CC /* NewMessageController.swift */,
+				7C37454C20BC27A2005C59EE /* MessageController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		7CFC973F20F6A4C2004A19CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CFC974020F6A4DE004A19CC /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		895DB98A972245A650EDD57C /* Pods */ = {
@@ -186,6 +209,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CFC973E20F67BC5004A19CC /* 111.png in Resources */,
+				7CFC973C20F67A06004A19CC /* newMessage.png in Resources */,
 				7C0DDA0020BEBB5B00CCA280 /* draggon.jpg in Resources */,
 				7C0DDA0220BEBD1600CCA280 /* dragon.png in Resources */,
 				7C37455520BC27A4005C59EE /* LaunchScreen.storyboard in Resources */,
@@ -248,8 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C37455E20BC646A005C59EE /* LogoutController.swift in Sources */,
-				7C37454D20BC27A2005C59EE /* ViewController.swift in Sources */,
+				7C3BA90720F7BD2C00810C23 /* LoginController+Handlers.swift in Sources */,
+				7CFC973A20F66DBD004A19CC /* NewMessageController.swift in Sources */,
+				7C37455E20BC646A005C59EE /* LoginController.swift in Sources */,
+				7C37454D20BC27A2005C59EE /* MessageController.swift in Sources */,
+				7CFC974120F6A4DE004A19CC /* User.swift in Sources */,
 				7C37454B20BC27A2005C59EE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

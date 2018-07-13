@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class LogoutController: UIViewController {
+class LoginController: UIViewController {
     
     var inputsContainerViewHeightAnchor : NSLayoutConstraint?
     var nameTextfieldHeightAnchor : NSLayoutConstraint?
@@ -68,10 +68,12 @@ class LogoutController: UIViewController {
         tf.translatesAutoresizingMaskIntoConstraints = false
         return tf
     }()
-    let profileImageView : UIImageView = {
+    lazy var profileImageView : UIImageView = {
         let imView = UIImageView()
         imView.image = UIImage.init(named: "pen.png")
-        imView.contentMode = .scaleAspectFill
+        imView.contentMode = .scaleAspectFit
+        imView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(handleSelectProfileImageView)))
+        imView.isUserInteractionEnabled = true
         imView.translatesAutoresizingMaskIntoConstraints = false
         return imView
     }()
@@ -83,6 +85,7 @@ class LogoutController: UIViewController {
         sc.translatesAutoresizingMaskIntoConstraints = false
         return sc
     }()
+    
     
     //Triggers after clicking loginRegisterButton
     @objc func handleLoginRegisterChange()  {
@@ -133,41 +136,7 @@ class LogoutController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @objc func handleRegistration() {
-        print("ok")
-        
-        //unwrapping variables gotten from storyboard
-        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
-            print("Data is not valid")
-            return
-        }
-        
-        //Creating new user in database
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            print("ok")
-            if error != nil {
-                print(error!)
-            }
-            
-            //Adding cathegory "users" in database and new child
-            guard let uid = user?.uid else { return }
-            var ref : DatabaseReference
-            ref = Database.database().reference()
-            //            ref.removeValue()
-            let usersRef = ref.child("users").child(uid)
-            
-            let values = ["name" : name, "email" : email, "password" : password]
-            usersRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
-                if error != nil{
-                    print(error!)
-                }else{
-                    print("saved user successfully into firebase database")
-                }
-            })
-        }
-        
-        dismiss(animated: true, completion: nil)
-    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -251,7 +220,7 @@ class LogoutController: UIViewController {
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: 5).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 170).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
     }
     
     //LoginRegisterSegmentedControl anchors
@@ -262,9 +231,9 @@ class LogoutController: UIViewController {
         loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle{
+//        return .lightContent
+//    }
     
 }
 
