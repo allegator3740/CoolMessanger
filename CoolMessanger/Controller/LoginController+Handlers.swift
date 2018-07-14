@@ -13,9 +13,12 @@ import Firebase
 extension LoginController : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @objc func handleRegistration() {
-        print("ok")
-        
         //unwrapping variables gotten from storyboard
+        //22000 айфон
+        //800 чехол
+        //5000 в больнице
+        //1500 райфайзинг
+        //6600 аккаунт разработчика
         guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
             print("Data is not valid")
             return
@@ -23,7 +26,6 @@ extension LoginController : UIImagePickerControllerDelegate, UINavigationControl
         
         //Creating new user in database
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            print("ok")
             if error != nil {
                 print(error!)
             }
@@ -47,7 +49,6 @@ extension LoginController : UIImagePickerControllerDelegate, UINavigationControl
                         self.registerUserIntoDataBaseWithUID(uid: uid, values: values as [String : AnyObject])
                         
                     }
-                    print(metaData!)
                 })
             }
             

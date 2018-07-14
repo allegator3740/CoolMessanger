@@ -162,7 +162,7 @@ class LoginController: UIViewController {
         setupLoginRegisterSegmentedControl()
     }
     
-    
+    //PRAGMA: constraints
     
     func setupInputsContainerView() {
         
@@ -231,9 +231,9 @@ class LoginController: UIViewController {
         loginRegisterSegmentedControl.heightAnchor.constraint(equalToConstant: 36).isActive = true
     }
     
-//    override var preferredStatusBarStyle: UIStatusBarStyle{
-//        return .lightContent
-//    }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
     
 }
 
