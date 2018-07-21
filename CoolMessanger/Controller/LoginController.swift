@@ -10,7 +10,11 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, UITextFieldDelegate {
+    
+    var messagesController : MessageController?
+    var view_shift_size_when_keyboard_appears : Int?
+    
     
     var inputsContainerViewHeightAnchor : NSLayoutConstraint?
     var nameTextfieldHeightAnchor : NSLayoutConstraint?
@@ -70,8 +74,12 @@ class LoginController: UIViewController {
     }()
     lazy var profileImageView : UIImageView = {
         let imView = UIImageView()
-        imView.image = UIImage.init(named: "pen.png")
-        imView.contentMode = .scaleAspectFit
+        imView.image = UIImage.init(named: "pphoto.png")
+        imView.contentMode = .scaleAspectFill
+        imView.layer.cornerRadius = 60
+        imView.layer.masksToBounds = true
+        imView.layer.borderWidth = 3
+        imView.layer.borderColor = UIColor.white.cgColor
         imView.addGestureRecognizer(UITapGestureRecognizer.init(target: self, action: #selector(handleSelectProfileImageView)))
         imView.isUserInteractionEnabled = true
         imView.translatesAutoresizingMaskIntoConstraints = false
@@ -85,6 +93,11 @@ class LoginController: UIViewController {
         sc.translatesAutoresizingMaskIntoConstraints = false
         return sc
     }()
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     
     //Triggers after clicking loginRegisterButton
@@ -132,18 +145,48 @@ class LoginController: UIViewController {
                 print(error!)
                 return
             }
+            
+            //Successfully logged in
+            self.messagesController?.fetchUserAndSetupNavBarTitle()
+            self.dismiss(animated: true, completion: nil)
         }
-        dismiss(animated: true, completion: nil)
+       
     }
     
+    
+    func correctingLayoutDependingOnDevice() -> () {
+        switch UIDevice.current.screenType {
+        case .iPhone4:
+            view_shift_size_when_keyboard_appears = 100
+            print("iphon4")
+        case .iPhone5:
+            print("iPhone5")
+            view_shift_size_when_keyboard_appears = 100
+        case .iPhoneX:
+            print("iPhoneX")
+            view_shift_size_when_keyboard_appears = 60
+        case .iPhone6Plus:
+            print("iPhone6Plus")
+            view_shift_size_when_keyboard_appears = 60
+        case .iPhone6:
+            print("iPhone6")
+            view_shift_size_when_keyboard_appears = 100
+
+        default:
+            print("no no")
+        }
+    }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         view.backgroundColor = UIColor.init(r: 61, g: 91, b: 151)
         view.addSubview(inputsConrainerView)
         view.addSubview(loginRegisterButton)
+        
+        correctingLayoutDependingOnDevice()
         
         //Adding textFields and separators into container view
         inputsConrainerView.addSubview(nameTextField)
@@ -160,7 +203,43 @@ class LoginController: UIViewController {
         setupInputsContainerView()
         setupLoginRegisterButton()
         setupLoginRegisterSegmentedControl()
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(willShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboarWillChange(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
+
+    var keyboardIsShown : Bool = false
+    
+    
+    @objc func willHide(notification: Notification){
+        print(notification.name.rawValue)
+        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: {
+            self.view.frame.origin.y += CGFloat(self.view_shift_size_when_keyboard_appears!)
+        }, completion: nil)
+        
+        keyboardIsShown = false
+    }
+
+    @objc func willShow(notification: Notification){
+        print(notification.name.rawValue)
+        if keyboardIsShown == true {
+            return
+        }
+        UIView.animate(withDuration: 2.0, delay: 0, options: .curveEaseOut, animations: {
+            self.view.frame.origin.y -= CGFloat(self.view_shift_size_when_keyboard_appears!)
+        }, completion: nil)
+        
+        print(" 2 \(notification.name.rawValue)")
+        keyboardIsShown = true
+
+    }
+    
+
     
     //PRAGMA: constraints
     
@@ -218,9 +297,9 @@ class LoginController: UIViewController {
     //ProfileImageView anchors
     func setupProfileImageView() {
         profileImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: 5).isActive = true
-        profileImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-        profileImageView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        profileImageView.bottomAnchor.constraint(equalTo: loginRegisterSegmentedControl.topAnchor, constant: -15).isActive = true
+        profileImageView.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        profileImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
     }
     
     //LoginRegisterSegmentedControl anchors
@@ -236,6 +315,8 @@ class LoginController: UIViewController {
     }
     
 }
+
+
 
 extension UIColor {
     convenience init(r:CGFloat, g:CGFloat, b:CGFloat){

@@ -4,6 +4,10 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>You can select photos to attach to reports.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app will use camera.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

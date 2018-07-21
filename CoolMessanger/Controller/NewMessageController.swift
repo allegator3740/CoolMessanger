@@ -73,8 +73,6 @@ class NewMessageController: UITableViewController {
     }
 }
 
-
-
 class userCell: UITableViewCell {
     
     override func layoutSubviews() {

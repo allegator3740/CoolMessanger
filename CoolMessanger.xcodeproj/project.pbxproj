@@ -17,9 +17,12 @@
 		7C37455520BC27A4005C59EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C37455320BC27A4005C59EE /* LaunchScreen.storyboard */; };
 		7C37455E20BC646A005C59EE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C37455D20BC646A005C59EE /* LoginController.swift */; };
 		7C3BA90720F7BD2C00810C23 /* LoginController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3BA90620F7BD2C00810C23 /* LoginController+Handlers.swift */; };
+		7C433D8A20FE04CC009C3D3A /* photo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C433D8920FE04CC009C3D3A /* photo.png */; };
+		7C433D8C20FE06B7009C3D3A /* pphoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C433D8B20FE06B7009C3D3A /* pphoto.png */; };
 		7C43BFB120FA51BA002436F3 /* shrek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C43BFB020FA51BA002436F3 /* shrek.jpg */; };
 		7C43BFB420FA8774002436F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C43BFB320FA8774002436F3 /* Extensions.swift */; };
 		7CC600AD20EF8AF70062F428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */; };
+		7CE34918210253E60017210F /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34917210253E60017210F /* ChatLogController.swift */; };
 		7CFC973A20F66DBD004A19CC /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC973920F66DBD004A19CC /* NewMessageController.swift */; };
 		7CFC973C20F67A06004A19CC /* newMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC973B20F67A06004A19CC /* newMessage.png */; };
 		7CFC973E20F67BC5004A19CC /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC973D20F67BC5004A19CC /* 111.png */; };
@@ -41,10 +44,13 @@
 		7C37455620BC27A4005C59EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C37455D20BC646A005C59EE /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7C3BA90620F7BD2C00810C23 /* LoginController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginController+Handlers.swift"; sourceTree = "<group>"; };
+		7C433D8920FE04CC009C3D3A /* photo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo.png; sourceTree = "<group>"; };
+		7C433D8B20FE06B7009C3D3A /* pphoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pphoto.png; sourceTree = "<group>"; };
 		7C43BFB020FA51BA002436F3 /* shrek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shrek.jpg; sourceTree = "<group>"; };
 		7C43BFB320FA8774002436F3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7CC600AB20EF80990062F428 /* CoolMessanger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoolMessanger.entitlements; sourceTree = "<group>"; };
 		7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7CE34917210253E60017210F /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
 		7CFC973920F66DBD004A19CC /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		7CFC973B20F67A06004A19CC /* newMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newMessage.png; sourceTree = "<group>"; };
 		7CFC973D20F67BC5004A19CC /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				7C0DDA0120BEBD1600CCA280 /* dragon.png */,
+				7C433D8920FE04CC009C3D3A /* photo.png */,
+				7C433D8B20FE06B7009C3D3A /* pphoto.png */,
 				7CFC973D20F67BC5004A19CC /* 111.png */,
 				7C43BFB020FA51BA002436F3 /* shrek.jpg */,
 				7CFC973B20F67A06004A19CC /* newMessage.png */,
@@ -129,6 +137,7 @@
 				7C3BA90620F7BD2C00810C23 /* LoginController+Handlers.swift */,
 				7CFC973920F66DBD004A19CC /* NewMessageController.swift */,
 				7C37454C20BC27A2005C59EE /* MessageController.swift */,
+				7CE34917210253E60017210F /* ChatLogController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +242,8 @@
 				7C37455220BC27A4005C59EE /* Assets.xcassets in Resources */,
 				7C37455020BC27A2005C59EE /* Main.storyboard in Resources */,
 				7CC600AD20EF8AF70062F428 /* GoogleService-Info.plist in Resources */,
+				7C433D8A20FE04CC009C3D3A /* photo.png in Resources */,
+				7C433D8C20FE06B7009C3D3A /* pphoto.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE34918210253E60017210F /* ChatLogController.swift in Sources */,
 				7C3BA90720F7BD2C00810C23 /* LoginController+Handlers.swift in Sources */,
 				7CFC973A20F66DBD004A19CC /* NewMessageController.swift in Sources */,
 				7C37455E20BC646A005C59EE /* LoginController.swift in Sources */,

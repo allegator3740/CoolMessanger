@@ -36,8 +36,8 @@ extension LoginController : UIImagePickerControllerDelegate, UINavigationControl
             //successfully authenticated user
             let imageName = NSUUID().uuidString
             
-            let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).png")
-            if let uploadData = UIImagePNGRepresentation(self.profileImageView.image!) {
+            let storageRef = Storage.storage().reference().child("profile_images").child("\(imageName).jpg")
+            if let uploadData = UIImageJPEGRepresentation(self.profileImageView.image!, 0.1) {
                 storageRef.putData(uploadData, metadata: nil, completion: { (metaData, error) in
                     if error != nil {
                         print(error!)
@@ -55,7 +55,6 @@ extension LoginController : UIImagePickerControllerDelegate, UINavigationControl
             
         }
         
-        dismiss(animated: true, completion: nil)
     }
     
     private func registerUserIntoDataBaseWithUID(uid: String, values: [String : AnyObject]) {
@@ -63,22 +62,58 @@ extension LoginController : UIImagePickerControllerDelegate, UINavigationControl
         ref = Database.database().reference()
         let usersRef = ref.child("users").child(uid)
         
-//        let values = ["name" : name, "email" : email, "password" : password, "profileImageUrl" : metadata.downloadUrl()]
+
         usersRef.updateChildValues(values, withCompletionBlock: { (error, ref) in
             if error != nil{
                 print(error!)
             }else{
                 print("saved user successfully into firebase database")
             }
+//            self.messagesController?.navigationItem.title = values["name"] as? String
+//            self.messagesController?.fetchUserAndSetupNavBarTitle()
+            let user = User()
+            user.name = values["name"] as? String
+            user.email = values["email"] as? String
+            user.password = values["password"] as? String
+            user.profileImageUrl = values["profileImageUrl"] as? String
+            self.messagesController?.setupNavBarWithUser(user: user)
+            self.dismiss(animated: true, completion: nil)
         })
     }
     
     @objc func handleSelectProfileImageView() {
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.allowsEditing = true
-        present(picker, animated: true, completion: nil)
+        let alertController = UIAlertController()
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Take picture", comment: "Default action"), style: .default, handler: { _ in
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            picker.allowsEditing = true
+            picker.sourceType = .camera
+            self.present(picker, animated: true, completion: nil)        }))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Choose photo", comment: "Default action"), style: .default, handler: { _ in
+                    let picker = UIImagePickerController()
+                    picker.delegate = self
+                    picker.allowsEditing = true
+                    self.present(picker, animated: true, completion: nil)
+        }))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Remove photo", comment: "Default action"), style: .default, handler: { _ in
+            self.profileImageView.image = UIImage(named: "pphoto.png")
+        }))
+        alertController.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .cancel, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alertController, animated: true, completion: nil)
+
+        
+//        let picker = UIImagePickerController()
+//        picker.delegate = self
+//        picker.allowsEditing = true
+//        present(picker, animated: true, completion: nil)
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "photo", style: .plain, target: self, action: #selector(handleCamera))
     }
+    
+//    @objc func handleCamera() {
+//        print("common")
+//    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         var pickedImage : UIImage?
