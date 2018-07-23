@@ -68,8 +68,12 @@ class NewMessageController: UITableViewController {
         return 80
     }
     
+    var messagesController = MessageController()
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        dismiss(animated: true, completion: nil)
+        self.messagesController.showChatController()
     }
 }
 

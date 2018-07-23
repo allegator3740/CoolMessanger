@@ -12,6 +12,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 
+
 class MessageController: UITableViewController {
     var handle : AuthStateDidChangeListenerHandle?
     public let titleView = UIView()
@@ -21,7 +22,7 @@ class MessageController: UITableViewController {
         super.viewDidLoad()
         
 
-        
+    
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleNewMessageController))
@@ -33,6 +34,7 @@ class MessageController: UITableViewController {
     
     @objc func handleNewMessageController() {
         let newMessage = NewMessageController()
+        newMessage.messagesController = self
         let navController = UINavigationController(rootViewController: newMessage)
         present(navController, animated: true, completion: nil)
     }
@@ -64,47 +66,63 @@ class MessageController: UITableViewController {
     
     deinit {
         print("fff")
+        
+        
     }
     
     func setupNavBarWithUser(user: User) {
-        titleView.frame = CGRect(x: 0, y: 0, width: 200, height: 35)
-        titleView.backgroundColor = UIColor.red
+        let titleView = UIView()
+        titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
+        //        titleView.backgroundColor = UIColor.redColor()
+        self.navigationItem.titleView = titleView
+        
+        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
+        
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
+        titleView.addSubview(containerView)
         
         let profileImageView = UIImageView()
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         profileImageView.contentMode = .scaleAspectFill
         profileImageView.layer.cornerRadius = 20
-        profileImageView.layer.masksToBounds = true
+        profileImageView.clipsToBounds = true
         if let profileImageUrl = user.profileImageUrl {
             profileImageView.loadImageUsingCacheWithUrlString(urlString: profileImageUrl)
         }
-        self.navigationItem.titleView = titleView
-        titleView.addSubview(containerView)
-        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
+        
         containerView.addSubview(profileImageView)
-
-        let nameLabel = UILabel()
-        containerView.addSubview(nameLabel)
-        nameLabel.text = user.name
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
-        nameLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
-        nameLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
-        nameLabel.heightAnchor.constraint(equalTo: profileImageView.heightAnchor).isActive = true
-
+        
+        //ios 9 constraint anchors
+        //need x,y,width,height anchors
         profileImageView.leftAnchor.constraint(equalTo: containerView.leftAnchor).isActive = true
         profileImageView.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 40).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        containerView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
+        let nameLabel = UILabel()
+        
+        containerView.addSubview(nameLabel)
+        nameLabel.text = user.name
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        //need x,y,width,height anchors
+        nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 8).isActive = true
+        nameLabel.centerYAnchor.constraint(equalTo: profileImageView.centerYAnchor).isActive = true
+        nameLabel.rightAnchor.constraint(equalTo: containerView.rightAnchor).isActive = true
+        nameLabel.heightAnchor.constraint(equalTo: profileImageView.heightAnchor).isActive = true
+        
         containerView.centerXAnchor.constraint(equalTo: titleView.centerXAnchor).isActive = true
+        containerView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
+        
+       
+
+     
+        
+
         
         let options = NSKeyValueObservingOptions([.new, .old])
         titleView.addObserver(self, forKeyPath: "frame", options: options, context: nil)
-        
+
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
@@ -114,7 +132,7 @@ class MessageController: UITableViewController {
    
     
     @objc func showChatController()  {
-        let chatLogController = ChatLogController()
+        let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewFlowLayout())
         navigationController?.pushViewController(chatLogController, animated: true)
 
     }
@@ -129,13 +147,15 @@ class MessageController: UITableViewController {
             print(logoutError)
         }
         
-        let loginController = LoginController()
+        let loginController = LoginController()//[[LoginController alloc] init]
         loginController.messagesController = self
         present(loginController, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+
         
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
@@ -146,6 +166,12 @@ class MessageController: UITableViewController {
             }
         }
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        titleView.frame = CGRect(x: 100, y: 0, width: 200, height: 35)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {
