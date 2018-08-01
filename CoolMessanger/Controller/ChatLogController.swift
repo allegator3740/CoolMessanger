@@ -19,11 +19,16 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate {
         return textfield
     }()
 
+    var user : User? {
+        didSet{
+            navigationItem.title = user?.name
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView?.backgroundColor = .white
-        navigationItem.title = "Chat log controller"
         setupInputComponents()
     }
     
@@ -72,7 +77,11 @@ class ChatLogController: UICollectionViewController, UITextFieldDelegate {
     @objc func handleSend()  {
         let ref = Database.database().reference().child("messages")
         let childRef = ref.childByAutoId()
-        let values = ["text" : inputTextfield.text!, "name" : "Joe Addams"]
+        let toId = user?.id
+        let fromId = Auth.auth().currentUser?.uid
+        let timeStamp = Date().timeIntervalSinceReferenceDate
+        
+        let values = ["text" : inputTextfield.text!, "toId" : toId!, "fromId" : fromId!, "timeStamp" : timeStamp] as [String : Any]
         childRef.updateChildValues(values)
         
     }

@@ -131,7 +131,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             handleLogin()
         }else {
             handleRegistration()
-            let login = LoginController()
+//            let login = LoginController()
             
         }
     }

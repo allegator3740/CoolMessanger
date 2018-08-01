@@ -22,7 +22,9 @@
 		7C43BFB120FA51BA002436F3 /* shrek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7C43BFB020FA51BA002436F3 /* shrek.jpg */; };
 		7C43BFB420FA8774002436F3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C43BFB320FA8774002436F3 /* Extensions.swift */; };
 		7CC600AD20EF8AF70062F428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */; };
+		7CD88AEC2108628600B11868 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD88AEB2108628600B11868 /* Message.swift */; };
 		7CE34918210253E60017210F /* ChatLogController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE34917210253E60017210F /* ChatLogController.swift */; };
+		7CFA52C12109ED9C0072D87A /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFA52C02109ED9C0072D87A /* UserCell.swift */; };
 		7CFC973A20F66DBD004A19CC /* NewMessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFC973920F66DBD004A19CC /* NewMessageController.swift */; };
 		7CFC973C20F67A06004A19CC /* newMessage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC973B20F67A06004A19CC /* newMessage.png */; };
 		7CFC973E20F67BC5004A19CC /* 111.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CFC973D20F67BC5004A19CC /* 111.png */; };
@@ -50,7 +52,9 @@
 		7C43BFB320FA8774002436F3 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7CC600AB20EF80990062F428 /* CoolMessanger.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoolMessanger.entitlements; sourceTree = "<group>"; };
 		7CC600AC20EF8AF70062F428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7CD88AEB2108628600B11868 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7CE34917210253E60017210F /* ChatLogController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogController.swift; sourceTree = "<group>"; };
+		7CFA52C02109ED9C0072D87A /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		7CFC973920F66DBD004A19CC /* NewMessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageController.swift; sourceTree = "<group>"; };
 		7CFC973B20F67A06004A19CC /* newMessage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newMessage.png; sourceTree = "<group>"; };
 		7CFC973D20F67BC5004A19CC /* 111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 111.png; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 			children = (
 				7CC600AB20EF80990062F428 /* CoolMessanger.entitlements */,
 				7C37454A20BC27A2005C59EE /* AppDelegate.swift */,
+				7CFA52BF2109ECC80072D87A /* View */,
 				7C43BFB220FA870A002436F3 /* Helpers */,
 				7CFC973F20F6A4C2004A19CC /* Model */,
 				7C0DD9FC20BEB9DD00CCA280 /* Images */,
@@ -150,10 +155,19 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		7CFA52BF2109ECC80072D87A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CFA52C02109ED9C0072D87A /* UserCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7CFC973F20F6A4C2004A19CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7CFC974020F6A4DE004A19CC /* User.swift */,
+				7CD88AEB2108628600B11868 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,10 +316,12 @@
 				7CE34918210253E60017210F /* ChatLogController.swift in Sources */,
 				7C3BA90720F7BD2C00810C23 /* LoginController+Handlers.swift in Sources */,
 				7CFC973A20F66DBD004A19CC /* NewMessageController.swift in Sources */,
+				7CD88AEC2108628600B11868 /* Message.swift in Sources */,
 				7C37455E20BC646A005C59EE /* LoginController.swift in Sources */,
 				7C37454D20BC27A2005C59EE /* MessageController.swift in Sources */,
 				7CFC974120F6A4DE004A19CC /* User.swift in Sources */,
 				7C37454B20BC27A2005C59EE /* AppDelegate.swift in Sources */,
+				7CFA52C12109ED9C0072D87A /* UserCell.swift in Sources */,
 				7C43BFB420FA8774002436F3 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

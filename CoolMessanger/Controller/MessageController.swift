@@ -15,19 +15,79 @@ import FirebaseAuth
 
 class MessageController: UITableViewController {
     var handle : AuthStateDidChangeListenerHandle?
+    
     public let titleView = UIView()
+    var messagesDictionary = [String : Message]()
+    let cellId = "cellId"
 
+    var messages = [Message]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-    
+//        var ref = Database.database().reference()
+//        ref.removeValue()
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "logout", style: .plain, target: self, action: #selector(handleLogout))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(handleNewMessageController))
-        
+        tableView.register(UserCell.self, forCellReuseIdentifier: cellId)
         checkIfUserIsLoggedIn()
+        observeMessages()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                print("user is signed in")
+                print(user!.email!)
+            } else {
+                print("unautherized")
+            }
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        //        titleView.frame = CGRect(x: 100, y: 0, width: 200, height: 35)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    
+    
+    func observeMessages() {
+        let ref = Database.database().reference().child("messages")
+        ref.observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String : Any] {
+                let message = Message()
+                message.text = dictionary["text"] as? String
+                message.toId = dictionary["toId"] as? String
+                message.fromId = dictionary["fromId"] as? String
+                message.timeStamp = dictionary["timeStamp"] as? Double
+//                self.messages.append(message)
+                print("\(self.messages)")
+
+                if let toId = message.toId {
+                    self.messagesDictionary[toId] = message
+                    self.messages = Array(self.messagesDictionary.values)
+                    print(self.messages)
+//                    self.messages.sorted(by: { (message1, message2) -> Bool in
+//                        return Int(message1.timeStamp!) > Int(message2.timeStamp!)
+//                    })
+                }
+              
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+            }
+        }, withCancel: nil)
     }
     
 
@@ -64,10 +124,24 @@ class MessageController: UITableViewController {
         }, withCancel: nil)
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messages.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? UserCell
+        let message = messages[indexPath.row]
+        cell?.message = message
+        
+        return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
     deinit {
         print("fff")
-        
-        
     }
     
     func setupNavBarWithUser(user: User) {
@@ -75,8 +149,6 @@ class MessageController: UITableViewController {
         titleView.frame = CGRect(x: 0, y: 0, width: 100, height: 40)
         //        titleView.backgroundColor = UIColor.redColor()
         self.navigationItem.titleView = titleView
-        
-        titleView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showChatController)))
         
         let containerView = UIView()
         containerView.translatesAutoresizingMaskIntoConstraints = false
@@ -114,12 +186,6 @@ class MessageController: UITableViewController {
         containerView.centerXAnchor.constraint(equalTo: titleView.centerXAnchor).isActive = true
         containerView.centerYAnchor.constraint(equalTo: titleView.centerYAnchor).isActive = true
         
-       
-
-     
-        
-
-        
         let options = NSKeyValueObservingOptions([.new, .old])
         titleView.addObserver(self, forKeyPath: "frame", options: options, context: nil)
 
@@ -131,8 +197,9 @@ class MessageController: UITableViewController {
     
    
     
-    @objc func showChatController()  {
+    @objc func showChatControllerForUser(user: User)  {
         let chatLogController = ChatLogController(collectionViewLayout: UICollectionViewFlowLayout())
+        chatLogController.user = user
         navigationController?.pushViewController(chatLogController, animated: true)
 
     }
@@ -152,33 +219,7 @@ class MessageController: UITableViewController {
         present(loginController, animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
-
-        
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil {
-                print("user is signed in")
-                print(user!.email!)
-            } else {
-                print("unautherized")
-            }
-        }
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        titleView.frame = CGRect(x: 100, y: 0, width: 200, height: 35)
-
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        Auth.auth().removeStateDidChangeListener(handle!)
-    }
-    
     
     
 }
